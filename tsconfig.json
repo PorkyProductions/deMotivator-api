@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noImplicitReturns": true,
+        "outDir": "./out",
+        "pretty": true,
+        "target": "ES2017",
+        "strict": true,
+        "diagnostics": true,
+        "extendedDiagnostics": true,
+        "moduleResolution": "node",
+        "module": "esnext",
+        "generateCpuProfile": "./log/profile.cpuprofile",
+        "listEmittedFiles": true,
+        "listFiles": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "./src/**/*.ts"
+    ],
+    "exclude": [],
+    "buildOptions": {
+        "verbose": true
+    }
+}
