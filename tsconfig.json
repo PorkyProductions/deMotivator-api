@@ -1,29 +1,13 @@
 {
-    "compilerOptions": {
-        "alwaysStrict": true,
-        "allowUnreachableCode": false,
-        "allowUnusedLabels": false,
-        "noImplicitAny": true,
-        "noUnusedLocals": true,
-        "noImplicitReturns": true,
-        "outDir": "./out",
-        "pretty": true,
-        "target": "ES2017",
-        "strict": true,
-        "diagnostics": true,
-        "extendedDiagnostics": true,
-        "moduleResolution": "node",
-        "module": "esnext",
-        "generateCpuProfile": "./log/profile.cpuprofile",
-        "listEmittedFiles": true,
-        "listFiles": true,
-        "allowSyntheticDefaultImports": true
-    },
-    "include": [
-        "./src/**/*.ts"
-    ],
-    "exclude": [],
-    "buildOptions": {
-        "verbose": true
-    }
+  "compilerOptions": {
+    "outDir": "dist",
+
+    "incremental": true,
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
 }
