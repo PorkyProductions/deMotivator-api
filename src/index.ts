@@ -303,27 +303,38 @@ var date = new Date()
 
 app.get("/insult", async (req, res) => {
     res.status(200).send({
-      date: `${date.getMonth()}/${date.getDay()}/${date.getFullYear()} at ${date.getTime()}`,
-      data: GenerateInsult()
+      date: `${date.getMonth()+1}/${date.getDay()+1}/${date.getFullYear()} at ${Date.now()}`,
+      data: GenerateInsult(),
+      length: GenerateInsult().length
     })
 });
-app.get("/insults", async (req,res) => {
+app.get("/insults", async (req, res) => {
   res.status(200).send({
-    date: `${date.getMonth()}/${date.getDay()}/${date.getFullYear()} at ${date.getTime()}`,
+    date: `${date.getMonth()}/${date.getDay()}/${date.getFullYear()} at ${Date.now()}`,
     data: insults
   })
 })
 app.get("/insultAt", async (req, res) => {
   res.status(200).send({
-    date: `${date.getMonth()}/${date.getDay()}/${date.getFullYear()} at ${date.getTime()}`,
+    date: `${date.getMonth()}/${date.getDay()}/${date.getFullYear()} at ${Date.now()}`,
     // @ts-ignore
-    data: insultAt(req.query.position)
+    data: insultAt(req.query.position),
+    // @ts-ignore
+    length: insultAt(req.query.position).length
   })
 })
 app.get("/inslut", (req,res) => {
   res.status(410).send({
-    date: `${date.getMonth()}/${date.getDay()}/${date.getFullYear()} at ${date.getTime()}`,
-    data: "You spelled it wrong."
+    date: `${date.getMonth()}/${date.getDay()}/${date.getFullYear()} at ${Date.now()}`,
+    data: "You spelled it wrong.",
+  })
+})
+app.post("/createInsult", (req,res) => {
+  const insultToCreate = req.query.insult
+  res.status(418).send({
+    date: `${date.getMonth()}/${date.getDay()}/${date.getFullYear()} at ${Date.now()}`,
+    data: insultToCreate,
+    message: "Did you really think you can post an insult. Youre asking too much.",
   })
 })
 
